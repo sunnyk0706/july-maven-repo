@@ -5,6 +5,7 @@ node('master') {
     }
     stage('ContinuousBuild')
     {
+        sh label: '', script: 'cd  /home/ubuntu/.jenkins/workspace/PipelineAsCode/ScriptedPipelineNewGit/maven'
         sh label: '', script: 'mvn package'
         archiveArtifacts '**/*.war'
     }
